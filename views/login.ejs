@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body> 
+  <div class="container">
+    <div class="row">
+      <h2 class="text-center">Login Page</h2> 
+      <div id="signupbox" style="margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <div class="panel-title">Login</div>
+            <div style="float: right; font-size: 85%; position: relative; top: -10px;" ></div>
+          </div>
+          <div class="panel-body">
+            <form action="/login" id="userform" class="form-horizontal" role="form" method="post">
+            <% if ( error != '' ){%>
+                <div id="signupalert" class="alert alert-dismissible alert-danger text-center">
+                    <button type="button" class="close" data-dismiss='alert'>&times;</button>
+                      <strong ><%= error %></strong>        
+                </div>
+            <%} %>
+            <% if ( error_massage != ''){%>
+              <div id="signupalert" class="alert alert-dismissible alert-danger text-center">
+                  <button type="button" class="close" data-dismiss='alert'>&times;</button>
+                  <strong ><%= error_massage %></strong>
+              </div>
+            <%} %>
+            <% if ( success_massage != ''){%>
+              <div id="signupalert" class="alert alert-dismissible alert-success text-center">
+                  <button type="button" class="close" data-dismiss='alert'>&times;</button>
+                  <strong ><%= success_massage %></strong>
+              </div>
+          <%} %>
+              <div class="form-group">
+                <label for="username" class="col-md-3 control-label">Email</label>
+                <div class="col-md-9">
+                  <input type="email" class="form-control" name="email" placeholder="Enter email">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="password" class="col-md-3 control-label">Password</label>
+                <div class="col-md-9">
+                  <input type="password" class="form-control" name="password" placeholder="Enter Password">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="col-md-3 control-label"></label>
+                <div class="col-md-9">
+                  <input type="submit" type="button" class="btn btn-info" value="Login">
+                </div>
+              </div>
+              <p>Don't have account? <a href="/">Create New Account</a></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  </body>
+</html>
